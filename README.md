@@ -32,7 +32,7 @@ SIEM (ELK / Splunk)
 ### 1. Clone & install dependencies
 
 ```bash
-git clone https://github.com/yourname/BlueShield-AI
+git clone https://github.com/Tejas-Mokashi/BlueShield-AI
 cd BlueShield-AI
 pip install -r requirements.txt
 ```
