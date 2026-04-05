@@ -1,6 +1,6 @@
-# 🛡️ SOC Automation Lab
+# 🛡️ BlueShield-AI
 
-> **End-to-End Security Operations Center Automation Platform**  
+> **End-to-End AI-Powered Security Operations Center Automation**  
 > Detect → Investigate → Classify → Respond — fully automated.
 
 ---
@@ -32,8 +32,8 @@ SIEM (ELK / Splunk)
 ### 1. Clone & install dependencies
 
 ```bash
-git clone https://github.com/yourname/soc-automation-lab
-cd soc-automation-lab
+git clone https://github.com/yourname/BlueShield-AI
+cd BlueShield-AI
 pip install -r requirements.txt
 ```
 
@@ -73,7 +73,7 @@ python detection/siem_listener.py --mode splunk --port 8888
 ## 📁 Project Structure
 
 ```
-soc-automation-lab/
+BlueShield-AI/
 │
 ├── logs/
 │   ├── soc_pipeline.log        # pipeline execution log
@@ -148,7 +148,7 @@ soc-automation-lab/
 
 ## 🤖 AI / ML Classifier
 
-The `ThreatClassifier` uses a weighted rule-based scoring model by default. To train and use the optional ML model:
+BlueShield-AI's `ThreatClassifier` uses a weighted rule-based scoring model by default. To train and use the optional ML model:
 
 ```bash
 # 1. Generate training data (run some alerts through the pipeline)
@@ -175,7 +175,7 @@ The ML classifier uses these features:
 
 ```
 [14:23:00] SSH brute force — 312 failed logins from 45.33.32.156
-[14:24:01] Pipeline triggered
+[14:24:01] BlueShield-AI pipeline triggered
 [14:24:03] VirusTotal: 7 malicious engines, reputation -15
 [14:24:04] AbuseIPDB: 87% confidence, 245 reports from 38 users
 [14:24:05] Classifier: score=79.45 → HIGH
@@ -204,4 +204,4 @@ T1204 (Malware Execution), T1071.004 (DNS Tunneling).
 
 ---
 
-*Built as an educational SOC automation lab. Response actions are simulated by default.*
+*BlueShield-AI — Built as an educational SOC automation project. Response actions are simulated by default.*
