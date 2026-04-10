@@ -1,0 +1,14 @@
+# BlueShield-AI — Python Dependencies
+
+# ── Core (always required) ────────────────────────────────────────────────────
+requests>=2.31.0          # HTTP client for VirusTotal, AbuseIPDB, ip-api, RDAP
+
+# ── Optional: ELK / Elasticsearch mode ───────────────────────────────────────
+elasticsearch>=8.0.0      # pip install elasticsearch
+
+# ── Optional: Splunk webhook receiver ────────────────────────────────────────
+flask>=3.0.0              # pip install flask
+
+# ── Optional: ML threat classifier ───────────────────────────────────────────
+scikit-learn>=1.4.0       # pip install scikit-learn
+numpy>=1.26.0             # required by scikit-learn
