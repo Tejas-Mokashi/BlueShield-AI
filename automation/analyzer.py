@@ -3,19 +3,23 @@ analyzer.py — Core SOC Automation Engine
 Orchestrates detection → investigation → AI decision → response pipeline
 """
 
+import sys
 import json
 import time
 import logging
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
+
+# ── Add ai_model/ to path so classifier.py can be found ──────────────────────
+sys.path.insert(0, str(Path(__file__).parent.parent / "ai_model"))
 
 from reputation_check import ReputationChecker
 from response import ResponseEngine
 
-# ── Ensure logs directory exists ─────────────────────────────────────────────
+# ── Ensure logs directory exists ──────────────────────────────────────────────
 Path("../logs").mkdir(parents=True, exist_ok=True)
 
-# ── Logging ──────────────────────────────────────────────────────────────────
+# ── Logging ───────────────────────────────────────────────────────────────────
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
@@ -45,7 +49,7 @@ def parse_alert(alert: dict) -> dict:
     """
     return {
         "id":         f"EVT-{int(time.time())}",
-        "timestamp":  alert.get("timestamp", datetime.utcnow().isoformat()),
+        "timestamp":  alert.get("timestamp", datetime.now(timezone.utc).isoformat()),
         "rule":       alert.get("rule", "Unknown Rule"),
         "source_ip":  alert.get("source_ip"),
         "domain":     alert.get("domain"),
