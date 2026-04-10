@@ -12,6 +12,9 @@ from pathlib import Path
 from reputation_check import ReputationChecker
 from response import ResponseEngine
 
+# ── Ensure logs directory exists ─────────────────────────────────────────────
+Path("../logs").mkdir(parents=True, exist_ok=True)
+
 # ── Logging ──────────────────────────────────────────────────────────────────
 logging.basicConfig(
     level=logging.INFO,
